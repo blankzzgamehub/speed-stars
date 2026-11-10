@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="640" height="360" viewBox="0 0 640 360"
+     role="img" aria-labelledby="title desc">
+
+  <title id="title">Speed Stars - Poki</title>
+  <desc id="desc">SVG port of the original Speed Stars HTML page. The full HTML is preserved verbatim and executed inside an embedded iframe.</desc>
+
+  <!-- Background color pulled from metadata.background_color -->
+  <rect width="640" height="360" fill="#231F20"/>
+
+  <!-- Static fallback title (visible only if scripts are blocked) -->
+  <g text-anchor="middle" font-family="'Arial Black', Arial, Helvetica, sans-serif">
+    <text x="320" y="170" font-size="54" font-style="italic" font-weight="900"
+          letter-spacing="2" fill="#ffffff">SPEED STARS</text>
+    <text x="320" y="202" font-size="12" letter-spacing="6" fill="#ffffff" fill-opacity="0.45">
+      LOADING…
+    </text>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- The original HTML document, preserved byte-for-byte.            -->
+  <!-- CDATA keeps every < > & " and newline intact.                   -->
+  <!-- ============================================================== -->
+  <script type="text/plain" id="original-html"><![CDATA[<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Speed Stars - Poki</title>
+	<script>
+	window.config = {
+		loader: 'unity-2020',
+		debug: false,
+		maxRatio: 24 / 9,
+		minRatio: 9 / 24,
+
+		title: 'Speed Stars',
+		thumbnail: '04f09e51e79fd1b6a5cc974b504d6379.png',
+		numScreenshots:  0 ,
+
+		unityVersion: '2022.3.19f1',
+		unityWebglBuildUrl: '',
+
+		fileSize:  37 ,
+		cachedDecompressedFileSizes: {
+			'6127fbba3e79cbcada24ba1ffd033f77.data':  13472152 ,
+			'Build_v2-40w.loader.js':  20642 ,
+			'b0e5ec181474d494c6ff3c9ad9c3b1bd.js':  405098 ,
+			'fe2a5824416bebe1cc941510618103f9.wasm':  23552919 ,
+		},
+		"metadata": {"poki_template_version":1,"background_color":"#231F20","code_filename":"fe2a5824416bebe1cc941510618103f9.wasm","company_name":"Luke Doukakis","data_filename":"6127fbba3e79cbcada24ba1ffd033f77.data","development_player":"false","framework_filename":"b0e5ec181474d494c6ff3c9ad9c3b1bd.js","height":"360","loader_filename":"Build_v2-40w.loader.js","product_name":"Speed Stars","product_version":"2.40","splash_screen_style":"Dark","unity_version":"2022.3.19f1","use_data_caching":"true","use_threads":"false","use_wasm":"true","use_webgl_1_0":"false","use_webgl_2_0":"true","width":"640"}
+	};
+	</script>
+<!-- will be copied to the resulting head //-->
+</head>
+<body>
+	<script src="https://m.igroutka.ru/files/scripts/poki/master-loader.js"></script>
+<!-- will be copied to the resulting body //-->
+<!-- will also be copied to the resulting body //-->
+</body>
+</html>]]></script>
+
+  <!-- Host iframe that will actually run the HTML document -->
+  <foreignObject x="0" y="0" width="640" height="360">
+    <iframe xmlns="http://www.w3.org/1999/xhtml"
+            id="game-frame"
+            width="640" height="360"
+            style="border:0;display:block;background:#231F20"
+            title="Speed Stars - Poki"></iframe>
+  </foreignObject>
+
+  <!-- Bootstrap: move the preserved HTML into the iframe -->
+  <script type="application/ecmascript"><![CDATA[
+    (function () {
+      function boot() {
+        var srcEl = document.getElementById('original-html');
+        var frame = document.getElementById('game-frame');
+        if (!srcEl || !frame) {
+          // Retry once the DOM is fully built.
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', boot, { once: true });
+          }
+          return;
+        }
+        frame.srcdoc = srcEl.textContent.replace(/^\s+/, '');
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', boot, { once: true });
+      } else {
+        boot();
+      }
+    })();
+  ]]></script>
+
+</svg>
